@@ -1,1 +1,1 @@
-https://github.com/noncrea/1306/blob/master/index.html
+https://noncrea.github.io/1306/index.html
