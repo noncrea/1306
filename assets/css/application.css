@@ -20,7 +20,8 @@ section {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0; }
+  margin: 0.67em 0;
+padding: 5em; }
 
 figcaption,
 figure,
@@ -10407,6 +10408,10 @@ body.contacto main.contacto article.contacto__tema header address ul.social li.s
 html, body, main {
   min-height: 100%; }
 
+header p {
+  padding-bottom: 1em;
+}
+
 body {
   position: relative; }
   body > header {
@@ -10749,10 +10754,11 @@ body > nav {
     font-size: smaller; }
 
 body > header a figure.logo {
-  background-image: url("../svg/logo.svg");
-  width: 4.20283rem;
+  background-image: url("../img/dacor.png");
+  width: 6rem;
   height: 2.8rem;
   margin: 0;
+  margin-top: 0.4em;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -11388,21 +11394,22 @@ body > footer {
     margin-top: 1.5em;
     margin-bottom: 1.5em; }
     body > footer section.contentinfo a.pattern figure {
-      width: 20vmax;
-      height: 7.63881vmax;
+      width: 30vmax;
+      height: 20vmax;
       margin: 0;
       background-color: transparent;
-      background-image: url('../svg/logo.svg');
+      background-image: url('../img/dacor.png');
       background-repeat: no-repeat;
-      background-position: 50% 50%;
+      background-position: 50% 10%;
       background-size: contain;
       background-attachment: scroll;
       background-origin: border-box;
       -webkit-filter: none;
       filter: none;
-      margin: auto; }
-    body > footer section.contentinfo a.pattern:hover figure, body > footer section.contentinfo a.pattern:focus figure, body > footer section.contentinfo a.pattern:target figure {
-      filter: brightness(0.8) sepia(0.8) saturate(80); }
+      margin: auto;
+      }
+      body > footer section.contentinfo a.pattern:hover figure, body > footer section.contentinfo a.pattern:focus figure, body > footer section.contentinfo a.pattern:target figure {
+      filter: brightness(0.3) sepia(0.8) saturate(10); }
   body > footer section.footer__pie {
     margin-top: 2em; }
     body > footer section.footer__pie > ul {
@@ -11552,7 +11559,7 @@ body main section.temas article.categorias {
         font-size: inherit;
         color: #557714; }
       body main section.index article.categorias article.categoria > header figure.logo,
-      body main section.temas article.categorias article.categoria > header figure.logo {
+      body main section.temas article.categorias article.categoria > header figure. {
         width: 2rem;
         height: 2rem;
         margin: 0;
@@ -15705,19 +15712,22 @@ span.brand-info-gradient {
   background: -webkit-linear-gradient(top, #eee 0%, #ddd 100%);
   background: linear-gradient(to bottom, #eee 0%, #ddd 100%);
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.25); }
-
-.agua:before {
+.agua:after {
   position: fixed;
+  offset-position: 1;
   content: '';
   bottom: 2vh;
   right: 5vh;
-  width: 30.02024vh;
+  width: 50.02024vh;
   height: 20vh;
-  opacity: 0.2;
-  background-image: url("../svg/logo.svg");
+  opacity: 0.6;
+  background-image: url("../img/dacor.png");
   background-position: 50% 50%;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat; 
+  margin-bottom: 2em;
+  margin-right: 2em;
+  }
 
 ul.social li.svg-icon {
   display: inline-block;
