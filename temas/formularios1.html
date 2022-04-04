@@ -19,6 +19,7 @@
     <link rel="shortcut icon" href="../assets/img/dacor.png" type="image/vnd.microsoft.icon" />
     <!-- Ruta a las hojas de estilos -->
     <link rel="stylesheet" type="text/css" href="../assets/css/application.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/formularios.css" />
     <!-- Título de la pestaña del navegador -->
     <title>UF1306 | Validación de Formularios</title>
     <script src="../assets/js/formularios1.js"></script>
@@ -64,7 +65,7 @@
             </header>
                 <article class="article index">
                         <h1 id="title">Forms I</h1>
-                    <form action="/google.es" method="post" class="form" id="form">
+                    <!--<form action="/google.es" method="post" class="form" id="form">
                     <div class="form__field">
                         <label for="name" class="form__label">Name:</label>
                         <input type="text" id="name" name="name">
@@ -89,7 +90,49 @@
                     </div>
                     <a href="../index.html" target="_blank" title="Ver o sitio web de UF1303" class="no-border pattern abcenter">
                         <figure aria-label="Logo"></figure>
-                    </a>
+                    </a>-->
+                        <form action="#" method="post" class="form" id="form">
+                            <fieldset>
+                                <legend>Formulario de Registro</legend>
+                                <ul>
+                                    <li>
+                                        <label for="name">Nombre:</label>
+                                        <!-- pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}" -->
+                                        <!-- title="Sólo se admiten letras del alfabeto español y espacios en blanco" -->
+                                        <input type="text" name="name" id="name" />
+                                    </li>
+                                    <li>
+                                        <label for="email">E-mail:</label>
+                                        <input type="email" name="email" id="email" />
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero"     value="h" id="hombre" />
+                                        <label for="hombre">Hombre</label>
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero"  value="m" id="mujer" />
+                                        <label for="mujer">Mujer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="acepto" id="acepto" />  Acepto el tratamiento de mis datos personales. 
+                                        <label for="acepto">
+                                            Más información en:
+                                            <br />
+                                            <a href="#">Política de tratamiento de datos personales</a>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+        
+                            <ul class="enviar">
+                                <li>
+                                    <input type="submit" value="Enviar" id="enviar" />
+                                </li>
+                                <li>
+                                    <input type="reset" value="Borrar" />
+                                </li>
+                            </ul>
+                        </form>
                 </article>
 
             </section>
