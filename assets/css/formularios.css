@@ -15,7 +15,7 @@ form.form fieldset {
 form.form fieldset legend {
     margin: 1em;
     margin-bottom: 0;
-    padding: 1em 1.5em;
+    padding: 0.5em 1.5em;
     border: 1px solid grey;
     text-align: left;
     font-weight: 700;
@@ -26,7 +26,7 @@ form.form fieldset legend {
 
 form.form ul {
     margin: 0;
-    padding: 2em;
+    padding: 0.5em;
     list-style: none;
 }
 
@@ -68,11 +68,11 @@ form.form ul.enviar {
 
 form.form ul.enviar li {
     display: inline-block;
-    padding: 1em 2em;
+    padding: 0.5em 2em;
 }
 
 form.form ul.enviar li input {
-    padding: 1em 2em;
+    padding: 0.5em 2em;
     cursor: pointer;
 }
 
@@ -116,3 +116,7 @@ form.form p#errores.danger {
     display: block;
     color: tomato;
 }
+form.form input:hover {background-color: lightgray;}
+
+.acepto {margin-top: 0;margin-bottom: 0;}
+.enviar input{margin-top: 0;padding-top: 0;}
