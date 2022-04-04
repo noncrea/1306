@@ -1,44 +1,82 @@
-const form = document.getElementById('form')
-const button = document.getElementById('submitButton')
+/*
+ * Gestión de eventos y formularios en JavaScript
+ */
 
-const name = document.getElementById('name')
-const email = document.getElementById('email')
-const gender = document.getElementById('gender')
-const terms = document.getElementById('terms')
+/*
+    Función anónima
+    1.- Ejecuta el código cuando la página se haya cargado completamente
+    2.- al evento de click en el botón de id = 'enviar'
+        ejecuta la función validarFormulario()
+*/
 
-const formIsValid = {
-    name: false,
-    email: false,
-    gender: false,
-    terms: false
+window.onload = function() {
+
+    // Se crea un objeto HTML Document
+
+    var enviar = document.getElementById("enviar");
+
+    /*
+        addEventListener()
+        Sintáxis:
+        addEventListener( evento-a-escuchar, función-a-lanzar, booleano )
+        Permanece a la escucha de un evento y cuando se activa ejecuta la función
+    */
+
+    // El método addEventListener asigna las funciones a los tipos de evento
+    // Evento onclick, tipo click, sobre el objeto element HTML
+    // con id 'enviar'
+    // Llama a la función validarFormulario()
+        // que se encarga de validar el formulario
+    // Se programa en la fase de burbuja (false),
+        // es decir, del elemento más específico hacia afuera
+
+    enviar.addEventListener('click', validarFormulario, false);
+
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    validateForm()
-})
 
-name.addEventListener('change', (e) => {
-    if(e.target.value.trim().length > 0) formIsValid.name = true
-})
+// Crear una función "validarFormulario" que se ejecute al pulsar el botón enviar
 
-email.addEventListener('change', (e) => {
-    if(e.target.value.trim().length > 0) formIsValid.email = true
-})
+/*
+    Función validarFormulario()
+    Realiza las validaciones de los campos de formulario
+*/
 
-gender.addEventListener('change', (e) => {
-    console.log(e.target.checked)
-    if(e.target.checked == true) formIsValid.gender = true
-})
+function validarFormulario() {
 
-terms.addEventListener('change', (e) => {
-    formIsValid.terms = e.target.checked
-    e.target.checked ? button.removeAttribute('disabled') : button.setAttribute('disabled', true)
-})
+    // Declaración de variables
+    var valido = true;
+    var expRegNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}$/;
 
-const validateForm = () => {
-    const formValues = Object.values(formIsValid)
-    const valid = formValues.findIndex(value => value == false)
-    if(valid == -1) form.submit()
-    else alert('Form invalid')
+    // Objetos document HTML
+    var formulario = document.getElementById("form")
+    var nombre = document.getElementById("name");
+    var email = document.getElementById("email");
+
+    // Validar con JavaScript que el campo “nombre” no esté vacío
+
+    if (nombre.value == "") {
+        // Si está vacío se mostrará el mensaje “El campo ‘nombre’ es obligatorio”
+        alert("El campo 'nombre' es obligatorio");
+        // y se pondrá el foco en el campo “nombre”
+        nombre.focus();
+        valido = false;
+    }
+
+    // Validar con JavaScript que el campo “nombre” sólo acepte caracteres de letras y espacios en blanco.
+
+    else if (!expRegNombre.exec(nombre.value)) {
+        // Si no es válido mostrará el mensaje “El campo nombre sólo acepta letras y espacios en blanco”
+        alert("El campo nombre sólo acepta letras y espacios en blanco ");
+        // y se pondrá el foco en el campo “nombre”
+        nombre.focus();
+        valido = false;
+    }
+
+    // Si todos los campos son válidos
+    // se mostrará el mensaje “Formulario enviado”.
+    if (valido == true) {
+        alert("Formulario enviado");
+        formulario.submit();
+    }
 }
