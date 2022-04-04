@@ -61,7 +61,7 @@
     <main id="mein">
         <section class="tema textos agua justify">
             <header class="portada" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/17/23/29/programming-1832991_960_720.png');">
-                <h2>Pruebas y optimización de páginas web</h2>
+                <h2>Validaciones de forlmularios en páginas web</h2>
             </header>
                 <article class="article index">
                         <h1 id="title">Forms I</h1>
@@ -93,17 +93,21 @@
                     </a>-->
                         <form action="#" method="post" class="form" id="form">
                             <fieldset>
-                                <legend>Formulario de Registro</legend>
+                                <legend>Formulario de Contacto</legend>
                                 <ul>
                                     <li>
                                         <label for="name">Nombre:</label>
                                         <!-- pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}" -->
                                         <!-- title="Sólo se admiten letras del alfabeto español y espacios en blanco" -->
-                                        <input type="text" name="name" id="name" />
+                                        <input type="text" 
+                                        placeholder="nombre"
+                                        name="name" id="name" />
                                     </li>
                                     <li>
                                         <label for="email">E-mail:</label>
-                                        <input type="email" name="email" id="email" />
+                                        <input type="email" 
+                                        placeholder="email"
+                                        name="email" id="email" />
                                     </li>
                                     <li class="radio">
                                         <input type="radio" name="genero"     value="h" id="hombre" />
@@ -122,6 +126,22 @@
                                         </label>
                                     </li>
                                 </ul>
+
+                                <label for="sms" id="mensaje"></label>
+                                <textarea name="sms" id="sms" cols="60" rows="5">Escribe tu mensaje:</textarea>
+                                <article>
+
+                                </article>
+
+                                <!--
+                                <input type="text"
+                                placeholder="usuario"
+                                name="" id="">
+                                <p id="errores">
+                                -->
+
+                                </p>
+
                                 <ul class="enviar">
                                     <li>
                                         <input type="submit" value="Enviar" id="enviar" />
@@ -130,7 +150,9 @@
                                         <input type="reset" value="Borrar" />
                                     </li>
                                 </ul>
+                                
                             </fieldset>
+                           
         
                            
                         </form>
