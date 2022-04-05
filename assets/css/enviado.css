@@ -8,3 +8,4 @@ header h1 {
 #enviao {
     margin: auto; padding: auto; text-align: center;
 }
+body, main {background-color: white;}
