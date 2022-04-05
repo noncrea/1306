@@ -49,8 +49,8 @@ window.onload = function() {
 function validarFormulario( enviar ) {
 
     // Objetos document HTML del formulario
-    var formulario = document.getElementById("formulario")
-    var nombre = document.getElementById("nombre");
+    var formulario = document.getElementById("form")
+    var nombre = document.getElementById("name");
     var edad = document.getElementById("edad");
     var email = document.getElementById("email");
     var mensaje = document.getElementById("mensaje");
@@ -60,7 +60,7 @@ function validarFormulario( enviar ) {
 
     // Validamos cada uno de los apartados con llamadas a sus funciones correspondientes.
     if (
-        validarSoloTexto( nombre )
+        validarSoloTexto( name )
         // && validarNumero( edad, 0, 120 )
         // && validarEmail( email )
         // && validarTextarea( mensaje, 3, 255 )
@@ -80,9 +80,11 @@ function validarFormulario( enviar ) {
 
         // return false; // validacion sigue siendo FALSE
     }
-
+  
     // Booleano final de la validación (true | false )
     return validacion;
+
+    
 }
 
 
@@ -241,5 +243,8 @@ function validarSoloTexto( elemento ) {
     return validacion;
 }
 
+function validao() {
+    window.open ("../temas/enviado.html");
+}
     
 

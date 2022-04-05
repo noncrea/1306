@@ -10770,7 +10770,7 @@ body > header a figure.logo {
   filter: none;
   margin-left: 1em;
   margin-right: 1em; }
-  body > header a figure.logo figcaption {
+  body > header a .logo figcaption {
     display: none; }
 
 body > header {
@@ -18463,7 +18463,7 @@ body main article.info header h3 {
   font-size: xx-large; }
 
 body main article.info header figure.covid19 {
-  background-image: url("../img/covid19.png");
+  background-image: url("../img/polo.jpg");
   display: inline-block;
   height: 15vw;
   width: 27.90698vw;
