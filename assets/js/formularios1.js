@@ -47,12 +47,16 @@ function validarFormulario() {
     // Declaración de variables
     var valido = true;
     var expRegNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}$/;
-    var expRegEmail = /^[a-zA-ZñÑ -_0-9]@{a-zA-Z0-9.-}{3,50}$/;
+    var expRegEmail = /^[a-zA-Z0-9._%+-ñÑ]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    var mensaje = /^[a-z0-9A-Z ñÑ]{0,250}$/;
+    var edad = /^[0-9]$/;
 
     // Objetos document HTML
     var formulario = document.getElementById("form")
     var nombre = document.getElementById("name");
     var email = document.getElementById("email");
+    var mensaje = document.getElementById("mensaje");
+    var edad = document.getElementById("edad");
 
     // Validar con JavaScript que el campo “nombre” no esté vacío
 
@@ -91,12 +95,24 @@ function validarFormulario() {
         valido = false;
     }
 
+    else if (mensaje.lengh > 250) {
+        alert ("Escribe menos, huevón");
+        mensaje.focus();
+        valido = false;
+    }
+
+    else if (edad.value <18 || edad.value > 110){
+        alert ("estás mintiendo, di la verdad (entre 18 y 110 años)");
+        edad.focus();
+        valido =false;
+    }
+
         // Si todos los campos son válidos
     // se mostrará el mensaje “Formulario enviado”.
     if (valido == true) {
         alert("Formulario enviado");
         formulario.submit();
-        window.open (URL(`../pages/enviado.html`);
+        window.open ("../temas/enviado.html");
 }
 
 }
