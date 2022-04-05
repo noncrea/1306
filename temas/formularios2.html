@@ -16,19 +16,21 @@
     <!-- Breve descripción del sitio que se verá en los resultados de búsqueda -->
     <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1306 Pruebas de funcionalidades y optimización de páginas web" />
     <!-- Ruta al favicon -->
-    <link rel="shortcut icon" href="assets/img/dacor.png" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="../assets/img/dacor.png" type="image/vnd.microsoft.icon" />
     <!-- Ruta a las hojas de estilos -->
-    <link rel="stylesheet" type="text/css" href="assets/css/application.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/application.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/formularios.css" />
     <!-- Título de la pestaña del navegador -->
-    <title>UF1306 | Pruebas de funcionalidades y optimización de páginas web</title>
+    <title>UF1306 | Validación de Formularios</title>
+    <script src="../assets/js/formularios2.js"></script>
 </head>
 
 <body>
     <!-- El header es la cabecera de la página web lleva el único encabezado h1 de la página -->
     <header>
-        <a href="index.html" title="Página principal">
+        <a href="../index.html" title="Página principal">
             <figure class="logo"></figure>
-            <h1>Pruebas de funcionalidades y optimización de páginas web (UF1306)</h1>
+            <h1>Validación de Formularios (UF1306)</h1>
         </a>
         <!-- Slogan -->
         <p class="pechado">Curso de Confección Publicación de Páginas Web</p>
@@ -39,15 +41,15 @@
         <label for="icon-menu" class="icon-menu" aria-label="Abrir/Pechar">Menú</label>
         <ul>
             <li>
-                <a href="#">Inicio</a>
+                <a href="../index.html">Inicio</a>
             </li>
             <li><a href="#">Temas</a>
                 <ul>
                     <li>
-                        <a href="temas/formularios1.html">Formularios I</a>
+                        <a href="../temas/formularios1.html">Formularios I</a>
                     </li>
                     <li>
-                        <a href="temas/formularios2.html">Formularios II</a>
+                        <a href="../temas/formularios2.html">Formularios II</a>
                     </li>
                 </ul>
             </li>
@@ -62,71 +64,110 @@
     <main id="mein">
         <section class="tema textos agua justify">
             <header class="portada" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/17/23/29/programming-1832991_960_720.png');">
-                <h2>Pruebas y optimización de páginas web</h2>
+                <h2>Validaciones de forlmularios en páginas web</h2>
             </header>
-            <article class="article index">
-                <h3>Las tres capas del diseño web</h3>
-                <p>
-                    Los estándares Web fomentan la separación de un contenido Web en 3 capas:
-                </p>
-                <ul>
-                    <li>
-                        <strong>Contenido</strong>:
-                        <span>
-                            Define estructura semántica y contenido de texto plano, se representa con el documento HTML.
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Presentación</strong>:
-                        <span>
-                            Añade el aspecto del contenido, lo representa la hoja de estilo CSS
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Comportamiento</strong>:
-                        <span>
-                            Añade mayor grado de interacción y funciones complejas, es posible representarlo con un documento JS o de otras tecnologías semejantes
-                        </span>
-                    </li>
-                </ul>
-                <figure class="img">
-                    <img src="assets/img/index_capas-disenho-web.jpeg" alt="Descripcion de las capas del desarrollo web" />
-                    <figcaption>
-                        Fig.1.- Capas del diseño web: Estructura, Contenido, Apariencia y Comportamiento
-                    </figcaption>
-                </figure>
-                <p>
-                    Un documento html es un visualizador de la información.
-                </p>
-                <p>
-                    Para hacer más atractivo este documento html , podemos utilizar diversas posibilidades como: combinación de colores, distintos tipos de letras, fondo del documento, ubicación por coordenadas en píxeles de un determinado texto,
-                    etc. Todas esas posibilidades las tenemos en las hojas de estilo o Style Sheets. Las hojas de estilo son una extensión del documento HTML, en las que se diseña la apariencia general del mismo.
-                </p>
-                <p>
-                    Las principales ventajas de utilizar las hojas de estilo son:
-                </p>
-                <ul>
-                    <li>
-                        <strong>Accesibilidad</strong>:
-                        <span>
-                            Los datos se pueden presentar en función del usuario y adaptarlos a sus necesidades. No es lo mismo presentar una web en un Pc, que presentarla en un teléfono móvil, o presentarla a personas con alguna discapacidad.
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Mantenimiento</strong>:
-                        <span>
-                            Separa y centraliza la presentación, bien en diferentes archivos o en partes bien conocidas del archivo, con lo cual tenemos localizado el código que queremos mantener y/o actualizar
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Simplicidad</strong>:
-                        <span>
-                            Se obtienen documentos más fáciles de entender y se reduce el tamaño de los mismos.
-                        </span>
-                    </li>
-                </ul>
-            </article>
-        </section>
+                <article class="article index">
+                        <h1 id="title">Forms II</h1>
+                    <!--<form action="/google.es" method="post" class="form" id="form">
+                    <div class="form__field">
+                        <label for="name" class="form__label">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form__field">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div id="gender" class="form__field">
+                        <label for=" male">Male</label>
+                        <input type="radio" name="gender" value="male">
+                        <label for="male">Female</label>
+                        <input type="radio" name="gender" value="female">
+                    </div>
+                    <div class="form__field">
+                        <label for="terms">I accept the terms and conditions</label>
+                        <input type="checkbox" name="terms" id="terms">
+                    </div>
+                    <button id="submitButton" disabled>Send</button>
+                    </form>
+                    <section class="contentinfo justify">
+                    </div>
+                    <a href="../index.html" target="_blank" title="Ver o sitio web de UF1303" class="no-border pattern abcenter">
+                        <figure aria-label="Logo"></figure>
+                    </a>-->
+                        <form action="#" method="post" class="form" id="form">
+                            <fieldset>
+                                <legend>Formulario de Contacto</legend>
+                                <ul>
+                                    <li>
+                                        <label for="name">Nombre:</label>
+                                        <!-- pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}" -->
+                                        <!-- title="Sólo se admiten letras del alfabeto español y espacios en blanco" -->
+                                        <input type="text" 
+                                        placeholder="nombre"
+                                        name="name" id="name" />
+                                    </li>
+                                    <li>
+                                        <label for="email">E-mail:</label>
+                                        <input type="email" 
+                                        placeholder="email"
+                                        name="email" id="email" />
+                                    </li>
+                                    <li>
+                                        <label for="edad">Edad</label>
+                                        <input type="number" placeholder="edad" name="edad" id="edad">
+
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero"     value="h" id="hombre" />
+                                        <label for="hombre">Hombre</label>
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero"  value="m" id="mujer" />
+                                        <label for="mujer">Mujer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="acepto" id="acepto" />  Acepto el tratamiento de mis datos personales. 
+                                        <label for="acepto">
+                                            Más información en:
+                                            <br />
+                                            <a href="#">Política de tratamiento de datos personales</a>
+                                        </label>
+                                    </li>
+                                </ul>
+
+                                <label for="sms" id="mensaje"></label>
+                                <textarea name="sms" id="sms" cols="60" rows="5">Escribe tu mensaje:</textarea>
+                                <article>
+
+                                </article>
+
+                                <!--
+                                <input type="text"
+                                placeholder="usuario"
+                                name="" id="">
+                                <p id="errores">
+                                -->
+
+                                </p>
+
+                                <ul class="enviar">
+                                    <li>
+                                        <input type="submit" value="Enviar" id="enviar" />
+                                    </li>
+                                    <li>
+                                        <input type="reset" value="Borrar" />
+                                    </li>
+                                </ul>
+                                
+                            </fieldset>
+                           
+        
+                           
+                        </form>
+                </article>
+
+            </section>
+        
     </main>
     <footer>
         <section class="contentinfo justify">
