@@ -1,23 +1,24 @@
 window.onload = function() {
-
     var enviar = document.getElementById("enviar");
     enviar.addEventListener('click', validarFormulario, false);
 }
 
 function validarFormulario( enviar ) {
     var formulario = document.getElementById("form")
-    var nombre = document.getElementById("name");
+    var name = document.getElementById("name");
     var edad = document.getElementById("edad");
     var email = document.getElementById("email");
     var mensaje = document.getElementById("mensaje");
+    var telefono  = document.getElementById("tfno");
 
     var validacion = false;
 
     if (
         validarSoloTexto( name )
-        // && validarNumero( edad, 0, 120 )
+        && validarNumero( edad, 0, 120 )
         && validarEmail( email )
-        // && validarTextarea( mensaje, 3, 255 )
+        && validarTextarea( mensaje, 3, 255 )
+        && validarTfno (telefono)
         && confirm("¿Deseas enviar el formulario con estos datos?")
     ){
         validacion = mensajeError(0);
@@ -33,7 +34,7 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
     var validacion = false;
     var texto = "[ERROR " + error + "] ";
     texto += "en el campo '" + campo + "': ";
-    var etiquetaInfo = document.getElementById( id );
+    var etiquetaInfo = document.getElementById( elemento );
     etiquetaInfo.className = "danger";
     if ( error != 0 ) {
         elemento.focus();
@@ -55,6 +56,18 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
         break;
         case 3:
             texto += "un email válido";
+            etiquetaInfo.innerHTML = texto;
+        break;
+        case 4:
+            texto += "edad entre 19 y 110 años";
+            etiquetaInfo.innerHTML = texto;
+        break;
+        case 5:
+            texto += "su mensaje a de ser de 3 a 250 caracteres";
+            etiquetaInfo.innerHTML = texto;
+        break;
+        case 6:
+            texto += "teléfono erróneo";
             etiquetaInfo.innerHTML = texto;
         break;
     }
@@ -95,6 +108,47 @@ function validarEmail ( elemento ) {
             var resultadoExpRegular = expresionRegular.exec( elemento.value );
             if ( !resultadoExpRegular ) {
                 validacion = mensajeError( 3, elemento );
+            }
+        break;
+    }
+   return validacion;
+}
+function validarTextarea ( elemento ) {
+    var expresionRegular = elemento.length > 255;
+    var validacion = validarObligatorio( elemento );
+    switch ( validacion ) {
+        case true:
+            var resultadoExpRegular = expresionRegular.exec( elemento.value );
+            if ( !resultadoExpRegular ) {
+                validacion = mensajeError( 5, elemento );
+            }
+        break;
+    }
+   return validacion;
+}
+
+function validarNumero ( elemento ) {
+    var expresionRegular = elemento.value < 18 || elemento.value > 120;
+    var validacion = validarObligatorio( elemento );
+    switch ( validacion ) {
+        case true:
+            var resultadoExpRegular = expresionRegular.exec( elemento.value );
+            if ( !resultadoExpRegular ) {
+                validacion = mensajeError( 4, elemento );
+            }
+        break;
+    }
+   return validacion;
+}
+
+function validarTfno ( elemento ) {
+    var expresionRegular = /^[6-9]{1}[0-9]{8}$/;;
+    var validacion = validarObligatorio( elemento );
+    switch ( validacion ) {
+        case true:
+            var resultadoExpRegular = expresionRegular.exec( elemento.value );
+            if ( !resultadoExpRegular ) {
+                validacion = mensajeError( 6, elemento );
             }
         break;
     }
