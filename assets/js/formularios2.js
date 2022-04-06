@@ -15,8 +15,8 @@ function validarFormulario( enviar ) {
 
     if (
         validarSoloTexto( name )
-        && validarNumero( edad, 0, 120 )
-        // && validarEmail( email )
+        // && validarNumero( edad, 0, 120 )
+        && validarEmail( email )
         // && validarTextarea( mensaje, 3, 255 )
         && confirm("¿Deseas enviar el formulario con estos datos?")
     ){
