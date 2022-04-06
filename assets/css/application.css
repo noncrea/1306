@@ -10822,12 +10822,12 @@ body main section.tema {
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("https://cdn.pixabay.com/photo/2020/02/09/13/08/banner-4833105_960_720.jpg");
+      background: url("../img/polo.jpg");
       background-position: 50% 50%;
       background-size: cover;
       opacity: 1;
-      -webkit-filter: brightness(1) blur(2px) grayscale(0.8);
-      filter: brightness(1) blur(2px) grayscale(0.8);
+      -webkit-filter: brightness(1) blur(2px) grayscale(0.5);
+      filter: brightness(1.5) blur(2px) grayscale(0.2);
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-origin: border-box; }
@@ -20834,7 +20834,7 @@ main.contacto {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/fachada.jpg");
+    background: url("../img/polo.jpg");
     background-position: 50% 50%;
     background-size: cover;
     opacity: 1;
@@ -21656,7 +21656,7 @@ main.resetpass {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/fachada.jpg");
+    background: url("../img/polo.jpg");
     background-position: 50% 50%;
     background-size: cover;
     opacity: 1;
