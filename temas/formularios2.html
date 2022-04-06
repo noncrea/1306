@@ -113,15 +113,16 @@
                                         name="email" id="email" required />
                                     </li>
                                     <li>
-                                        <label for="edad">Edad</label>
-                                        <input type="number" placeholder="edad" name="edad" id="edad">
-                                    </li>
-                                    <li>
                                         <label for="tfno">Teléfono</label>
                                         <input type="text"
                                             placeholder="Teléfono"
-                                            name="tfno" id="tfno" />
+                                            name="tfno" id="tfno" required />
                                     </li>
+                                    <li>
+                                        <label for="edad">Edad</label>
+                                        <input type="number" placeholder="edad" name="edad" id="edad">
+                                    </li>
+                                    
                                     <li class="radio">
                                         <input type="radio" name="genero"     value="h" id="hombre" />
                                         <label for="hombre">Hombre</label>
@@ -140,6 +141,9 @@
                                     </li>
                                 </ul>
 
+                                <p id="errores"></p>
+
+
                                 <label for="sms" id="mensaje"></label>
                                 <textarea name="sms" id="sms" cols="60" rows="5">Escribe tu mensaje:</textarea>
                                 <article>
@@ -151,10 +155,7 @@
                                 placeholder="usuario"
                                 name="" id="">
                                 <p id="errores">
-                                -->
-
-                                </p>
-
+                                -->                               
                                 <ul class="enviar">
                                     <li>
                                         <input type="submit" value="Enviar" id="enviar" />

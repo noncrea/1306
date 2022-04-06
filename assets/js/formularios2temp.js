@@ -15,15 +15,13 @@ function validarFormulario( enviar ) {
     var edad = document.getElementById("edad");
     var email = document.getElementById("email");
     var mensaje = document.getElementById("mensaje");
-    var telefono = document.getElementById("tfno");
 
     var validacion = false;
 
     if (
         validarSoloTexto( nombre )
         // && validarNumero( edad, 0, 120 )
-        && validarEmail( email )
-        && validarTfno( telefono )
+        // && validarEmail( email )
         // && validarTextarea( mensaje, 3, 255 )
         && confirm("¿Deseas enviar el formulario con estos datos?")
     ){
@@ -41,8 +39,11 @@ function validarFormulario( enviar ) {
 }
 
 function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
+
     var campo = elemento.name.toUpperCase();
+
     var validacion = false;
+
     var texto = "[ERROR " + error + "] ";
     texto += "en el campo '" + campo + "': ";
 
@@ -63,37 +64,26 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
         break;
 
         case 1:
+
             texto += "No puede estar vacío!";
-            etiquetaInfo.innerHTML = alert(texto);
+            etiquetaInfo.innerHTML = texto;
         break;
 
         case 2:
             texto += "Sólo acepta letras del alfabeto español y espacios en blanco";
-            etiquetaInfo.innerHTML = alert(texto);
+            etiquetaInfo.innerHTML = texto;
         break;
 
         case 3:
             texto += "El correo electrónico no parece un email válido";
-            etiquetaInfo.innerHTML = alert(texto);
+            etiquetaInfo.innerHTML = texto;
         break;
 
-        case 4:
-            texto += "edad entre 19 y 110 años";
-            etiquetaInfo.innerHTML = alert(texto);
-        break;
-
-        case 5:
-            texto += "su mensaje a de ser de 3 a 250 caracteres";
-            etiquetaInfo.innerHTML = alert(texto);
-        break;
-
-        case 6:
-            texto += "teléfono erróneo, solo números sin espacios";
-            etiquetaInfo.innerHTML = alert(texto);
-        break;
     }
+
     return validacion;
 }
+
 
 function validarObligatorio( elemento ) {
     var validacion = true;
@@ -105,6 +95,7 @@ function validarObligatorio( elemento ) {
     ){
         validacion = mensajeError( 1, elemento );
     }
+
     return validacion;
 }
 
@@ -124,8 +115,11 @@ function validarSoloTexto( elemento ) {
     return validacion;
 }
 
+
 function validarEmail( elemento ) {
+
     var expresionRegular = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
     var validacion = validarObligatorio( elemento );
 
     switch ( validacion ) {
@@ -139,19 +133,7 @@ function validarEmail( elemento ) {
             }
         break;
     }
+
     return validacion;
 }
-
-function validarTfno ( elemento ) {
-    var expresionRegular = /^[6-9]{1}[0-9]{8}$/;;
-    var validacion = validarObligatorio( elemento );
-    switch ( validacion ) {
-        case true:
-            var resultadoExpRegular = expresionRegular.exec( elemento.value );
-            if ( !resultadoExpRegular ) {
-                validacion = mensajeError( 6, elemento );
-            }
-        break;
-    }
-   return validacion;
-}
+j
