@@ -1,11 +1,28 @@
 header{
-    width: 100%;
-    margin: auto; padding: auto; text-align: center;
+ height: auto;
+    margin: auto; padding: auto; 
 }
 header h1 {
     padding-top: 0.5em;
 }
 #enviao {
-    margin: auto; padding: auto; text-align: center;
+    margin: auto; padding: auto; text-align: center;margin-top: 2em;margin-bottom: -2em;
 }
-body, main {background-color: white;}
+body, main {background-color: white; margin-bottom: -0em;padding-bottom: -5em;}
+
+body header {
+    margin-bottom: 1em; text-align: left;
+}
+
+body header h1 {
+    margin: auto;padding: auto;
+   display: flex;
+}
+
+footer {
+    margin-top: -10em; 
+}
+
+header {
+     max-height: 8em;
+}

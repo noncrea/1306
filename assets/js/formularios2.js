@@ -21,13 +21,14 @@ function validarFormulario( enviar ) {
 
     if (
         validarSoloTexto( nombre )
-        && validarEdad( edad )
         && validarEmail( email )
         && validarTfno( telefono )
-        // && validarTextarea( mensaje, 3, 255 )
+        && validarEdad( edad, 18, 120 )  
+        && validarTextarea( mensaje, 3, 255 )
         && confirm("¿Deseas enviar el formulario con estos datos?")
     ){
         validacion = mensajeError(0);
+
     }
 
     else {
@@ -57,7 +58,8 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
         case 0:
             texto = "Formulario válido!";
             etiquetaInfo.className = "success";
-            etiquetaInfo.innerHTML = texto;            
+            etiquetaInfo.innerHTML = texto;  
+            
             validacion = true;
 
         break;
@@ -162,6 +164,21 @@ function validarEdad ( elemento, min, max ) {
         case true:
             if (elemento.value <= min || elemento.value >= max) {
                 validacion = mensajeError( 4, elemento, min, max );
+            }
+        break;
+        }
+   return validacion;
+}
+
+function validarTextarea ( elemento, min, max ) {
+    var min=3;
+    var max=250;
+    var validacion = validarObligatorio( elemento );
+    elemento = mensaje.valeu
+    switch ( validacion ) {
+        case true:
+            if (elemento.length <= min || elemento.length >= max) {
+                validacion = mensajeError( 5, elemento, min, max );
             }
         break;
         }

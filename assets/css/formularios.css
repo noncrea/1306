@@ -3,6 +3,8 @@ body main {
     margin: auto;
 }
 
+
+
 form.form {
     display: inline-block;
 }
@@ -174,7 +176,7 @@ pre {
   font-size: 1em; }
 
 a {
-  background-color: transparent;
+  background-color: transparent; height: 0%;
   -webkit-text-decoration-skip: objects; }
 
 a:active,
@@ -10550,7 +10552,7 @@ body {
   body > header {
     position: fixed;
     top: 0;
-    height: 3.5rem; }
+    height: 55rem; }
   body > nav {
     position: fixed;
     top: 0;
