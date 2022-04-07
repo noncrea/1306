@@ -21,7 +21,7 @@ function validarFormulario( enviar ) {
 
     if (
         validarSoloTexto( nombre )
-        // && validarNumero( edad, 0, 120 )
+        && validarEdad( edad )
         && validarEmail( email )
         && validarTfno( telefono )
         // && validarTextarea( mensaje, 3, 255 )
@@ -57,9 +57,9 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
         case 0:
             texto = "Formulario válido!";
             etiquetaInfo.className = "success";
-            etiquetaInfo.innerHTML = texto;
-
+            etiquetaInfo.innerHTML = texto;            
             validacion = true;
+
         break;
 
         case 1:
@@ -78,7 +78,7 @@ function mensajeError ( error, elemento="", min=0, max=300, id="errores" ) {
         break;
 
         case 4:
-            texto += "edad entre 19 y 110 años";
+            texto += "edad entre 18 y 120 años";
             etiquetaInfo.innerHTML = alert(texto);
         break;
 
@@ -132,9 +132,7 @@ function validarEmail( elemento ) {
 
         case true:
             var resultadoExpRegular = expresionRegular.exec( elemento.value );
-
             if ( !resultadoExpRegular ) {
-
                 validacion = mensajeError( 3, elemento );
             }
         break;
@@ -143,7 +141,7 @@ function validarEmail( elemento ) {
 }
 
 function validarTfno ( elemento ) {
-    var expresionRegular = /^[6-9]{1}[0-9]{8}$/;;
+    var expresionRegular = /^[6-9]{1}[0-9]{8}$/;
     var validacion = validarObligatorio( elemento );
     switch ( validacion ) {
         case true:
@@ -154,4 +152,22 @@ function validarTfno ( elemento ) {
         break;
     }
    return validacion;
+}
+
+function validarEdad ( elemento, min, max ) {
+    var validacion = true;
+    var min=18;
+    var max=120;
+    switch ( validacion ) {
+        case true:
+            if (elemento.value <= min || elemento.value >= max) {
+                validacion = mensajeError( 4, elemento, min, max );
+            }
+        break;
+        }
+   return validacion;
+}
+
+function validao() {
+    window.open ("../temas/enviado.html");
 }
