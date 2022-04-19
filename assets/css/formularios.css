@@ -10960,8 +10960,8 @@ body main section.tema {
       background-position: 50% 50%;
       background-size: cover;
       opacity: 1;
-      -webkit-filter: brightness(1) blur(2px) grayscale(0.5);
-      filter: brightness(1.5) blur(2px) grayscale(0.2);
+      -webkit-filter: brightness(1) blur(0px) grayscale(0.5);
+      filter: brightness(1.5) blur(0px) grayscale(0.2);
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-origin: border-box; }
@@ -20972,8 +20972,8 @@ main.contacto {
     background-position: 50% 50%;
     background-size: cover;
     opacity: 1;
-    -webkit-filter: brightness(1) blur(2px) grayscale(0.8);
-    filter: brightness(1) blur(2px) grayscale(0.8);
+    -webkit-filter: brightness(1) blur(0px) grayscale(0.8);
+    filter: brightness(1) blur(0px) grayscale(0.8);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-origin: border-box; }
@@ -21794,8 +21794,8 @@ main.resetpass {
     background-position: 50% 50%;
     background-size: cover;
     opacity: 1;
-    -webkit-filter: blur(2px) grayscale(0.5) blur(0);
-    filter: blur(2px) grayscale(0.5) blur(0);
+    -webkit-filter: blur(0px) grayscale(0.5) blur(0);
+    filter: blur(0px) grayscale(0.5) blur(0);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-origin: border-box; }
