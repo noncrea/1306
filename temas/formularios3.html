@@ -60,6 +60,9 @@
                     <li>
                         <a href="../temas/formularios3.html">Formularios III</a>
                     </li>
+                    <li>
+                        <a href="../temas/formularios4.html">Formularios IV</a>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -79,18 +82,69 @@
                         <h1 id="title">Forms III</h1>
                    
 
-                        <form id="form" action="../temas/enviado.html" method="post">
-                            <p>
-                              <label for="name">Name <span>(required, at least 3 characters)</span></label>
-                              <input id="name" name="name" minlength="3" type="text" required:true>
-                            </p>
-                            <p>
-                              <label for="email">E-Mail <span>(required)</span></label>
-                              <input id="email" type="email" name="email" required:true>
-                            </p>
-                            <p>
-                              <input class="enviar" type="enviar" value="ENVIAR">
-                            </p>
+                        <form action="enviado.html" method="post" class="form" id="form">
+                            <fieldset>
+                                <legend>Formulario de Contacto</legend>
+                                <ul>
+                                    <li>
+                                        <label for="name">Nombre</label>
+                                        <!-- pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,50}" -->
+                                        <!-- title="Sólo se admiten letras del alfabeto español y espacios en blanco" -->
+                                        <input type="text"
+                                            placeholder="Tu nombre"
+                                            name="name" id="name" required />
+                                    </li>
+                                    <li>
+                                        <label for="email">E-mail</label>
+                                        <input type="email"
+                                            placeholder="Correo electrónico"
+                                            name="email" id="email" required />
+                                    </li>
+                                    <li>
+                                        <label for="tfno">Teléfono</label>
+                                        <input type="text"
+                                            placeholder="Teléfono"
+                                            name="tfno" id="tfno" required />
+                                    </li>
+                                    <li>
+                                        <label for="edad">Edad</label>
+                                        <input type="number"
+                                            placeholder="Edad"
+                                            id="edad" name="edad" />
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero" value="h" id="hombre" />
+                                        <label for="hombre">Hombre</label>
+                                    </li>
+                                    <li class="radio">
+                                        <input type="radio" name="genero" value="m" id="mujer" />
+                                        <label for="mujer">Mujer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="acepto" id="acepto" />
+                                        <label for="acepto">Acepto el tratamiento de mis datos personales. Más información en
+                                            <a href="#">Política de tratamiento de datos personales</a>
+                                        </label>
+                                    </li>
+                                    <li class="textarea">
+                                        <label for="mensaje">Mensaje</label>
+                                        <textarea
+                                            placeholder="Escribe tu mensaje aquí"
+                                            name="mensaje" id="mensaje"
+                                            cols="30" rows="5" required></textarea>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <p id="errores"></p>
+        
+                            <ul class="enviar">
+                                <li>
+                                    <input type="submit" value="Enviar" id="enviar" />
+                                </li>
+                                <li>
+                                    <input type="reset" value="Borrar" />
+                                </li>
+                            </ul>
                         </form>
 
 
@@ -159,7 +213,7 @@
                 </nav>
             </div>
 
-            <a href="../index.html" target="_blank" title="Ver o sitio web de UF1303" class="no-border">
+            <a href="../index.html" target="_blank" title="Ver o sitio web de UF1303" class="no-border pattern abcenter">
                 <figure aria-label="Logo" ></figure>
             </a>
         </section>
